@@ -1,4 +1,4 @@
-import 'package:daraz_ui/views/home_screen.dart';
+import 'package:daraz_ui/widgets/bottom_navigation.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: HomeScreen(),
+      home: const BottomNavigation(),
     );
   }
 }

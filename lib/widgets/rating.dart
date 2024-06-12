@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 
 class Rating extends StatelessWidget {
-  final double total;
-  const Rating({super.key, required this.total});
+  final int reviews;
+  final double rating;
+  const Rating({super.key, required this.rating, required this.reviews});
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +15,7 @@ class Rating extends StatelessWidget {
           size: 12,
         ),
         Text(
-          "${total.toString()}/5",
+          "${rating.toString()}/5 (${reviews}k)",
           style: TextStyle(fontSize: 12, color: Colors.grey[600]),
         )
       ],

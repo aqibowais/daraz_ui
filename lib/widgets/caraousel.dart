@@ -12,6 +12,7 @@ class Carousel extends StatelessWidget {
     return ImageSlideshow(
       isLoop: true,
       autoPlayInterval: 5000,
+      indicatorBottomPadding: 20,
       children: slider.sliderList.map((element) {
         return SizedBox(
           width: double.infinity,

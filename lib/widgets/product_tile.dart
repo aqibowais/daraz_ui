@@ -1,6 +1,8 @@
 import 'package:daraz_ui/model/product_model.dart';
-import 'package:daraz_ui/views/product_screen.dart';
+import 'package:daraz_ui/widgets/rating.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 class ProductTile extends StatelessWidget {
   final Product item;
@@ -10,88 +12,90 @@ class ProductTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => ProductScreen(item: item),
-          ),
-        );
+        print("clk");
       },
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Flexible(
-            child: Hero(
-              tag: "product_tile_image_${item.name}",
-              child: Image(
-                image: AssetImage(item.imageUrl),
-                fit: BoxFit.cover,
-              ),
-            ),
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Container(
+          width: 150,
+          decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.circular(15),
           ),
-          Padding(
-            padding: const EdgeInsets.only(top: 10, left: 10, right: 10),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  item.name,
-                  style: const TextStyle(
-                    fontSize: 12,
-                  ),
-                  maxLines: 2,
-                ),
-                Row(
-                  children: List.generate(
-                    5,
-                    (index) => Icon(
-                      index < item.rating ? Icons.star : Icons.star_border,
-                      size: 12,
-                      color: Colors.amber,
-                    ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Expanded(
+                child: Hero(
+                  tag: "product_tile_image",
+                  child: Image.asset(
+                    width: 140,
+                    item.imageUrl,
+                    fit: BoxFit.fill,
                   ),
                 ),
-                const SizedBox(height: 5),
-                Text(
-                  "Sold: ${item.soldQuantities}",
-                  style: const TextStyle(
-                    fontSize: 12,
-                    color: Colors.grey,
-                  ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(
+                  top: 5,
+                  left: 5,
                 ),
-                const SizedBox(height: 5),
-                Row(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      "\$${item.discountedPrice}",
+                      item.name,
                       style: const TextStyle(
                         fontSize: 16,
-                        color: Colors.red,
-                        fontWeight: FontWeight.bold,
                       ),
+                      overflow: TextOverflow.ellipsis,
                     ),
-                    const SizedBox(width: 10),
-                    Text(
-                      "\$${item.originalPrice}",
-                      style: const TextStyle(
-                        fontSize: 12,
-                        color: Colors.grey,
-                        decoration: TextDecoration.lineThrough,
-                      ),
+                    Row(
+                      children: [
+                        Text(
+                          "Rs. ${item.originalPrice}",
+                          style: const TextStyle(
+                              fontSize: 15,
+                              color: Colors.red,
+                              fontWeight: FontWeight.bold),
+                        ),
+                        const SizedBox(
+                          width: 7,
+                        ),
+                        Text(
+                          'Rs. ${item.discountedPrice.toString()}',
+                          style: const TextStyle(
+                              fontSize: 13,
+                              color: Colors.grey,
+                              decoration: TextDecoration.lineThrough,
+                              fontWeight: FontWeight.w700),
+                        )
+                      ],
                     ),
+                    Row(
+                      children: [
+                        Rating(
+                          rating: item.rating,
+                          reviews: item.reviews,
+                        ),
+                        const SizedBox(
+                          width: 5,
+                        ),
+                        Text(
+                          '${item.soldQuantities} Sold',
+                          style: const TextStyle(
+                              fontSize: 13,
+                              color: Colors.grey,
+                              fontWeight: FontWeight.w700),
+                        )
+                      ],
+                    )
                   ],
                 ),
-                Text(
-                  "${item.reviews} reviews",
-                  style: const TextStyle(
-                    fontSize: 12,
-                    color: Colors.grey,
-                  ),
-                ),
-              ],
-            ),
+              ),
+            ],
           ),
-        ],
+        ),
       ),
     );
   }
