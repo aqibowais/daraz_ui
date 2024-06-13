@@ -1,9 +1,9 @@
 import 'package:daraz_ui/Controller/category_controller.dart';
 import 'package:daraz_ui/controller/product_controller.dart';
+import 'package:daraz_ui/views/cart_screen.dart';
 import 'package:daraz_ui/widgets/app_bar.dart';
 import 'package:daraz_ui/widgets/caraousel.dart';
 import 'package:daraz_ui/widgets/category_grid.dart';
-import 'package:daraz_ui/widgets/category_tile.dart';
 import 'package:daraz_ui/widgets/product_tile.dart';
 import 'package:daraz_ui/widgets/seemore.dart';
 import 'package:daraz_ui/widgets/textbox.dart';
@@ -52,7 +52,17 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: homeAppBar(isActiveColor),
+      appBar: homeAppBar(
+          isActiveColor: isActiveColor,
+          leadingIcon: Icons.qr_code_scanner,
+          actionIcon1: Icons.currency_exchange,
+          actionIcon2: Icons.shopping_cart,
+          onAction2Pressed: () => Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => CartScreen(),
+                ),
+              )),
       backgroundColor: const Color.fromARGB(238, 245, 241, 241),
       extendBodyBehindAppBar: true,
       body: SingleChildScrollView(
@@ -65,7 +75,7 @@ class _HomeScreenState extends State<HomeScreen> {
             const SizedBox(height: 15),
             Container(
               width: MediaQuery.of(context).size.width * 0.9,
-              height: 270,
+              height: 320,
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(15),
@@ -73,7 +83,7 @@ class _HomeScreenState extends State<HomeScreen> {
               child: Column(
                 children: [
                   Container(
-                    height: MediaQuery.of(context).size.height * 0.08,
+                    height: 60,
                     decoration: const BoxDecoration(
                         image: DecorationImage(
                             image: AssetImage("assets/any3.png"),
@@ -95,7 +105,9 @@ class _HomeScreenState extends State<HomeScreen> {
                               const Text(
                                 "Any 3 from Rs. 735",
                                 style: TextStyle(
-                                    fontWeight: FontWeight.bold, fontSize: 17),
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 15,
+                                ),
                               ),
                               const Spacer(),
                               SeeMore(onTap: () {})
@@ -105,7 +117,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               style: TextStyle(
                                   color: Colors.deepOrange,
                                   fontWeight: FontWeight.bold,
-                                  fontSize: 15))
+                                  fontSize: 14))
                         ],
                       ),
                     ),
@@ -129,7 +141,7 @@ class _HomeScreenState extends State<HomeScreen> {
             //categories
             Container(
               width: MediaQuery.of(context).size.width * 0.9,
-              height: 270,
+              height: 390,
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(15),
@@ -168,22 +180,6 @@ class _HomeScreenState extends State<HomeScreen> {
                 ],
               ),
             ),
-            // GridView.builder(
-            //   physics: const NeverScrollableScrollPhysics(),
-            //   shrinkWrap: true,
-            //   padding: const EdgeInsets.all(10),
-            //   itemCount: productController.productList.length,
-            //   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-            //     crossAxisCount: 2,
-            //     childAspectRatio: 0.8,
-            //     mainAxisSpacing: 10,
-            //     crossAxisSpacing: 10,
-            //   ),
-            //   itemBuilder: (context, index) {
-            //     final item = productController.productList[index];
-            //     return ProductTile(item: item);
-            //   },
-            // ),
           ],
         ),
       ),
