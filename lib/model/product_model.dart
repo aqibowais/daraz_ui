@@ -1,12 +1,12 @@
 class Product {
   final String name;
   final String imageUrl;
-  final double originalPrice;
-  final double discountedPrice;
-  final double rating;
+  final int originalPrice;
+  final int discountedPrice;
   final int soldQuantities;
   final int reviews;
-
+  final double rating;
+  final String description;
   Product({
     required this.name,
     required this.imageUrl,
@@ -15,5 +15,6 @@ class Product {
     required this.rating,
     required this.soldQuantities,
     required this.reviews,
+    required this.description,
   });
 }

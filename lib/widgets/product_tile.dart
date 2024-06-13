@@ -1,4 +1,5 @@
 import 'package:daraz_ui/model/product_model.dart';
+import 'package:daraz_ui/views/detail_screen.dart';
 import 'package:daraz_ui/widgets/rating.dart';
 import 'package:flutter/material.dart';
 
@@ -10,7 +11,12 @@ class ProductTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        print("clk");
+        Navigator.push(
+            context,
+            MaterialPageRoute(
+                builder: (context) => DetailScreen(
+                      item: item,
+                    )));
       },
       child: Padding(
         padding: const EdgeInsets.all(8.0),
@@ -19,14 +25,6 @@ class ProductTile extends StatelessWidget {
           decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.circular(15),
-            boxShadow: [
-              BoxShadow(
-                color: Colors.grey.withOpacity(0.2),
-                spreadRadius: 2,
-                blurRadius: 5,
-                offset: const Offset(0, 3),
-              ),
-            ],
           ),
           child: Column(
             children: [
@@ -57,6 +55,9 @@ class ProductTile extends StatelessWidget {
                       ),
                       overflow: TextOverflow.ellipsis,
                     ),
+                    SizedBox(
+                      height: 10,
+                    ),
                     Row(
                       children: [
                         Text(
@@ -78,6 +79,9 @@ class ProductTile extends StatelessWidget {
                               fontWeight: FontWeight.w700),
                         )
                       ],
+                    ),
+                    SizedBox(
+                      height: 3,
                     ),
                     Padding(
                       padding: const EdgeInsets.only(bottom: 8),

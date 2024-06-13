@@ -10,6 +10,8 @@ class ProductController {
       rating: 4.2,
       soldQuantities: 450,
       reviews: 25,
+      description:
+          'High-quality wireless earphones with excellent sound quality and long battery life....',
     ),
     Product(
       name: 'Earphones for Sam-Sung Galaxy A12',
@@ -19,6 +21,8 @@ class ProductController {
       rating: 4.0,
       soldQuantities: 300,
       reviews: 15,
+      description:
+          'Perfect fit earphones for Samsung Galaxy A12 with superior sound clarity....',
     ),
     Product(
       name: 'High-Fidelity Red Earphones',
@@ -28,6 +32,8 @@ class ProductController {
       rating: 4.3,
       soldQuantities: 500,
       reviews: 30,
+      description:
+          'Experience high-fidelity sound with these stylish red earphones....',
     ),
     Product(
       name: 'Noise Cancelling EarBuds',
@@ -37,6 +43,8 @@ class ProductController {
       rating: 4.7,
       soldQuantities: 600,
       reviews: 40,
+      description:
+          'Noise-cancelling earbuds for an immersive listening experience....',
     ),
     Product(
       name: 'Adjustable Headset Hangers',
@@ -46,6 +54,8 @@ class ProductController {
       rating: 4.1,
       soldQuantities: 200,
       reviews: 20,
+      description:
+          'Keep your headsets organized with these adjustable hangers....',
     ),
     Product(
       name: 'Compact EarBuds with Charging Case',
@@ -55,6 +65,8 @@ class ProductController {
       rating: 4.5,
       soldQuantities: 550,
       reviews: 35,
+      description:
+          'Compact earbuds with a convenient charging case for all-day use....',
     ),
   ];
 }

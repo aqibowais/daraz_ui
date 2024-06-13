@@ -1,6 +1,7 @@
 import 'package:daraz_ui/Controller/category_controller.dart';
 import 'package:daraz_ui/controller/product_controller.dart';
 import 'package:daraz_ui/views/cart_screen.dart';
+import 'package:daraz_ui/widgets/any3banner.dart';
 import 'package:daraz_ui/widgets/app_bar.dart';
 import 'package:daraz_ui/widgets/caraousel.dart';
 import 'package:daraz_ui/widgets/category_grid.dart';
@@ -60,10 +61,10 @@ class _HomeScreenState extends State<HomeScreen> {
           onAction2Pressed: () => Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => CartScreen(),
+                  builder: (context) => const CartScreen(),
                 ),
               )),
-      backgroundColor: const Color.fromARGB(238, 245, 241, 241),
+      backgroundColor: const Color(0xFFF5F5F5),
       extendBodyBehindAppBar: true,
       body: SingleChildScrollView(
         controller: _scrollController,
@@ -82,46 +83,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
               child: Column(
                 children: [
-                  Container(
-                    height: 60,
-                    decoration: const BoxDecoration(
-                        image: DecorationImage(
-                            image: AssetImage("assets/any3.png"),
-                            fit: BoxFit.fill)),
-                    child: Padding(
-                      padding: const EdgeInsets.all(5),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Row(
-                            children: [
-                              const Image(
-                                image: AssetImage("assets/cartany.png"),
-                                width: 30,
-                                height: 30,
-                                fit: BoxFit.cover,
-                              ),
-                              const Text(
-                                "Any 3 from Rs. 735",
-                                style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 15,
-                                ),
-                              ),
-                              const Spacer(),
-                              SeeMore(onTap: () {})
-                            ],
-                          ),
-                          const Text("Free Delivery",
-                              style: TextStyle(
-                                  color: Colors.deepOrange,
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 14))
-                        ],
-                      ),
-                    ),
-                  ),
+                  const Any3Banner(),
                   Expanded(
                     child: ListView.builder(
                       scrollDirection: Axis.horizontal,
@@ -148,10 +110,10 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
               child: Column(
                 children: [
-                  SizedBox(
+                  const SizedBox(
                     height: 80,
                     child: Padding(
-                      padding: const EdgeInsets.all(10),
+                      padding:  EdgeInsets.all(10),
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.start,
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -159,15 +121,15 @@ class _HomeScreenState extends State<HomeScreen> {
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              const Text(
+                               Text(
                                 "Categories",
                                 style: TextStyle(
                                     fontWeight: FontWeight.bold, fontSize: 20),
                               ),
-                              SeeMore(onTap: () {})
+                              SeeMore()
                             ],
                           ),
-                          const Text("Inspired by your interests",
+                           Text("Inspired by your interests",
                               style: TextStyle(
                                   color: Colors.grey,
                                   fontWeight: FontWeight.w700,

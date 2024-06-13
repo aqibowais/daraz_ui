@@ -2,8 +2,9 @@ import 'package:daraz_ui/views/products_screen.dart';
 import 'package:flutter/material.dart';
 
 class SeeMore extends StatefulWidget {
-  final Function? onTap;
-  const SeeMore({super.key, required this.onTap});
+  const SeeMore({
+    super.key,
+  });
 
   @override
   State<SeeMore> createState() => _SeeMoreState();

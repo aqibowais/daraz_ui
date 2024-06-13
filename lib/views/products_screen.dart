@@ -4,9 +4,7 @@ import 'package:daraz_ui/widgets/app_bar.dart';
 import 'package:daraz_ui/widgets/filters.dart';
 import 'package:daraz_ui/widgets/product_tile.dart';
 import 'package:daraz_ui/widgets/services_card.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class ProductScreen extends StatefulWidget {
   const ProductScreen({super.key});
@@ -21,7 +19,7 @@ class _ProductScreenState extends State<ProductScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(238, 245, 241, 241),
+      backgroundColor: const Color(0xFFF5F5F5),
       appBar: homeAppBar(
         isActiveColor: true,
         leadingIcon: Icons.arrow_back_ios,
@@ -51,7 +49,7 @@ class _ProductScreenState extends State<ProductScreen> {
               itemCount: productController.productList.length,
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
-                childAspectRatio: 0.75,
+                childAspectRatio: 0.68,
                 mainAxisSpacing: 6,
                 crossAxisSpacing: 6,
               ),
