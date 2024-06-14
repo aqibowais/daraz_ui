@@ -1,4 +1,3 @@
-import 'package:daraz_ui/views/products_screen.dart';
 import 'package:flutter/material.dart';
 
 class SeeMore extends StatefulWidget {
@@ -15,11 +14,9 @@ class _SeeMoreState extends State<SeeMore> {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        Navigator.push(
+        Navigator.pushNamed(
           context,
-          MaterialPageRoute(
-            builder: ((context) => const ProductScreen()),
-          ),
+         '/ProductScreen'
         );
       },
       child: Container(
@@ -29,10 +26,10 @@ class _SeeMoreState extends State<SeeMore> {
             color: Colors.transparent,
             border: Border.all(color: Colors.deepOrange),
             borderRadius: BorderRadius.circular(5)),
-        child: Row(
+        child: const Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Text(
+            Text(
               "See More",
               style: TextStyle(
                   color: Colors.deepOrange,

@@ -22,15 +22,15 @@ class ServicesCard extends StatelessWidget {
               children: [
                 Image(
                   width: MediaQuery.of(context).size.width * 0.2,
-                  image: AssetImage(
+                  image: const AssetImage(
                     "assets/delivery.png",
                   ),
                   fit: BoxFit.cover,
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 5,
                 ),
-                Text("Factory Deals")
+                const Text("Factory Deals")
               ],
             ),
           ),
@@ -47,15 +47,15 @@ class ServicesCard extends StatelessWidget {
                 Image(
                   width: MediaQuery.of(context).size.width * 0.2,
                   height: 40,
-                  image: AssetImage(
+                  image: const AssetImage(
                     "assets/free.png",
                   ),
                   fit: BoxFit.contain,
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 5,
                 ),
-                Text("Free Delivery")
+                const Text("Free Delivery")
               ],
             ),
           ),
@@ -66,7 +66,7 @@ class ServicesCard extends StatelessWidget {
               border: Border.all(color: Colors.grey.shade400),
               borderRadius: BorderRadius.circular(10),
             ),
-            child: Column(
+            child: const Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Flexible(

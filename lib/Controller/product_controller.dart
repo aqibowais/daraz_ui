@@ -11,7 +11,7 @@ class ProductController {
       soldQuantities: 450,
       reviews: 25,
       description:
-          'High-quality wireless earphones with excellent sound quality and long battery life....',
+          'High-quality wireless earphones with good sound quality and long battery life....',
     ),
     Product(
       name: 'Earphones for Sam-Sung Galaxy A12',
@@ -55,18 +55,18 @@ class ProductController {
       soldQuantities: 200,
       reviews: 20,
       description:
-          'Keep your headsets organized with these adjustable hangers....',
+          'Experience high-fidelity sound with these stylish earphones....',
     ),
     Product(
-      name: 'Compact EarBuds with Charging Case',
-      imageUrl: 'assets/earbuds.jfif',
-      originalPrice: 800,
-      discountedPrice: 890,
-      rating: 4.5,
-      soldQuantities: 550,
-      reviews: 35,
+      name: 'Wireless Bluetooth Earphones',
+      imageUrl: 'assets/bthearphones.jfif',
+      originalPrice: 750,
+      discountedPrice: 650,
+      rating: 4.2,
+      soldQuantities: 450,
+      reviews: 25,
       description:
-          'Compact earbuds with a convenient charging case for all-day use....',
+          'High-quality wireless earphones with good sound quality and long battery life....',
     ),
   ];
 }

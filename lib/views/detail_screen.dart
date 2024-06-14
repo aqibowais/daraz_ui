@@ -34,54 +34,130 @@ class _DetailScreenState extends State<DetailScreen> {
           );
         },
       ),
-      body: Stack(
-        children: [
-          SingleChildScrollView(
-            child: Column(
-              children: [
-                Container(
-                  width: MediaQuery.of(context).size.width,
-                  height: 300,
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Container(
+              width: MediaQuery.of(context).size.width,
+              height: 300,
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage(widget.item.imageUrl),
+                  fit: BoxFit.fill,
+                  filterQuality: FilterQuality.high,
+                ),
+              ),
+              child: Align(
+                alignment: Alignment.bottomCenter,
+                child: Container(
                   decoration: BoxDecoration(
-                    image: DecorationImage(
-                      image: AssetImage(widget.item.imageUrl),
-                      fit: BoxFit.fill,
-                      filterQuality: FilterQuality.high,
-                    ),
-                  ),
-                  child: Align(
-                    alignment: Alignment.bottomCenter,
-                    child: Container(
                       color: Colors.black.withOpacity(0.5),
-                      padding: EdgeInsets.all(8),
-                      child: Text(
-                        '1/7',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 16,
-                        ),
-                      ),
+                      borderRadius: BorderRadius.circular(15)),
+                  padding: const EdgeInsets.all(8),
+                  child: const Text(
+                    '1/7',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 16,
                     ),
                   ),
                 ),
-                DescriptionBox(item: widget.item),
-                // Add other widgets here if needed
-              ],
+              ),
             ),
-          ),
-          // Positioned(
-          //   bottom: 0,
-          //   left: 0,
-          //   right: 0,
-          //   child: Container(
-          //     height: 200,
-          //     decoration: BoxDecoration(
-          //         color: Color(0xffFFE473),
-          //         borderRadius: BorderRadius.circular(20)),
-          //     child: Center(),
-          //   ),
-          // ),
-        ],
+            DescriptionBox(item: widget.item),
+            Container(
+              width: MediaQuery.of(context).size.width,
+              height: 220,
+              decoration: BoxDecoration(
+                color: Colors.yellow[300],
+                borderRadius: const BorderRadius.only(
+                  topLeft: Radius.circular(20),
+                  topRight: Radius.circular(20),
+                ),
+              ),
+              child: Padding(
+                padding: const EdgeInsets.all(18.0),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Container(
+                          width: 70,
+                          height: 60,
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(5),
+                            border: Border.all(
+                              width: 2,
+                              color: Colors.deepOrange,
+                            ),
+                          ),
+                          child:
+                              const Image(image: AssetImage("assets/box.png")),
+                        ),
+                        const SizedBox(
+                          width: 10,
+                        ),
+                        Container(
+                          width: 70,
+                          height: 60,
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(5),
+                            border: Border.all(
+                              width: 2,
+                              color: Colors.deepOrange,
+                            ),
+                          ),
+                          child:
+                              const Image(image: AssetImage("assets/box.png")),
+                        ),
+                        const SizedBox(
+                          width: 10,
+                        ),
+                        Container(
+                          width: 70,
+                          height: 60,
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(5),
+                            border: Border.all(
+                              width: 2,
+                              color: Colors.deepOrange,
+                            ),
+                          ),
+                          child:
+                              const Image(image: AssetImage("assets/box.png")),
+                        ),
+                      ],
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(20),
+                      child: Container(
+                        height: 50,
+                        decoration: BoxDecoration(
+                          color: Colors.deepOrange,
+                          borderRadius: BorderRadius.circular(7),
+                        ),
+                        child: const Center(
+                          child: Text(
+                            "Add This Item",
+                            style: TextStyle(
+                                fontWeight: FontWeight.w600,
+                                color: Colors.white,
+                                fontSize: 18),
+                          ),
+                        ),
+                      ),
+                    )
+                  ],
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

@@ -17,10 +17,10 @@ class _BottomNavigationState extends State<BottomNavigation> {
   int _selectedIndex = 0;
 
   final List<Widget> _pages = [
-    HomeScreen(),
-    MessageScreen(),
-    CartScreen(),
-    AccountScreen(),
+    const HomeScreen(),
+    const MessageScreen(),
+    const CartScreen(),
+    const AccountScreen(),
   ];
 
   void _onItemTapped(int index) {
@@ -43,7 +43,7 @@ class _BottomNavigationState extends State<BottomNavigation> {
         colorSelected: Colors.red,
         indexSelected: _selectedIndex,
         onTap: _onItemTapped,
-        paddingVertical: 10,
+        paddingVertical: 35,
       ),
     );
   }

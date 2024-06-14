@@ -1,6 +1,5 @@
 import 'package:daraz_ui/Controller/category_controller.dart';
 import 'package:daraz_ui/controller/product_controller.dart';
-import 'package:daraz_ui/views/cart_screen.dart';
 import 'package:daraz_ui/widgets/any3banner.dart';
 import 'package:daraz_ui/widgets/app_bar.dart';
 import 'package:daraz_ui/widgets/caraousel.dart';
@@ -58,12 +57,7 @@ class _HomeScreenState extends State<HomeScreen> {
           leadingIcon: Icons.qr_code_scanner,
           actionIcon1: Icons.currency_exchange,
           actionIcon2: Icons.shopping_cart,
-          onAction2Pressed: () => Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => const CartScreen(),
-                ),
-              )),
+          onAction2Pressed: () => Navigator.pushNamed(context, '/CartScreen')),
       backgroundColor: const Color(0xFFF5F5F5),
       extendBodyBehindAppBar: true,
       body: SingleChildScrollView(
@@ -113,7 +107,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   const SizedBox(
                     height: 80,
                     child: Padding(
-                      padding:  EdgeInsets.all(10),
+                      padding: EdgeInsets.all(10),
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.start,
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -121,7 +115,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                               Text(
+                              Text(
                                 "Categories",
                                 style: TextStyle(
                                     fontWeight: FontWeight.bold, fontSize: 20),
@@ -129,7 +123,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               SeeMore()
                             ],
                           ),
-                           Text("Inspired by your interests",
+                          Text("Inspired by your interests",
                               style: TextStyle(
                                   color: Colors.grey,
                                   fontWeight: FontWeight.w700,

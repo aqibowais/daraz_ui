@@ -1,3 +1,8 @@
+import 'package:daraz_ui/views/account_screen.dart';
+import 'package:daraz_ui/views/cart_screen.dart';
+import 'package:daraz_ui/views/home_screen.dart';
+import 'package:daraz_ui/views/msg_screen.dart';
+import 'package:daraz_ui/views/products_screen.dart';
 import 'package:daraz_ui/widgets/bottom_navigation.dart';
 import 'package:flutter/material.dart';
 
@@ -16,6 +21,13 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         useMaterial3: true,
       ),
+      routes: {
+        '/HomeScreen': (context) => const HomeScreen(),
+        '/AccountScreen': (context) => const AccountScreen(),
+        '/CartScreen': (context) => const CartScreen(),
+        '/MessageScreen': (context) => const MessageScreen(),
+        '/ProductScreen': (context) => const ProductScreen(),
+      },
       home: const BottomNavigation(),
     );
   }

@@ -29,12 +29,7 @@ class _ProductScreenState extends State<ProductScreen> {
         actionIcon1: Icons.filter_alt,
         actionIcon2: Icons.shopping_cart,
         onAction2Pressed: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => const CartScreen(),
-            ),
-          );
+          Navigator.pushNamed(context, '/CartScreen');
         },
       ),
       body: Column(
@@ -44,7 +39,7 @@ class _ProductScreenState extends State<ProductScreen> {
           Expanded(
             child: GridView.builder(
               shrinkWrap: true,
-              physics: BouncingScrollPhysics(),
+              physics: const BouncingScrollPhysics(),
               padding: const EdgeInsets.all(10),
               itemCount: productController.productList.length,
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(

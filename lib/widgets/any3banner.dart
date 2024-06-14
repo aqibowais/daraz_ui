@@ -16,32 +16,32 @@ class _Any3BannerState extends State<Any3Banner> {
       decoration: const BoxDecoration(
           image: DecorationImage(
               image: AssetImage("assets/any3.png"), fit: BoxFit.fill)),
-      child: Padding(
-        padding: const EdgeInsets.all(5),
+      child: const Padding(
+        padding: EdgeInsets.all(5),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Row(
               children: [
-                const Image(
+                Image(
                   image: AssetImage("assets/cartany.png"),
                   width: 30,
                   height: 30,
                   fit: BoxFit.cover,
                 ),
-                const Text(
+                Text(
                   "Any 3 from Rs. 735",
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 15,
                   ),
                 ),
-                const Spacer(),
+                Spacer(),
                 SeeMore()
               ],
             ),
-            const Text("Free Delivery",
+            Text("Free Delivery",
                 style: TextStyle(
                     color: Colors.deepOrange,
                     fontWeight: FontWeight.bold,
